@@ -1,7 +1,5 @@
-Index: mt7620-p4rev-113050/src/common/cmm_data_pci.c
-===================================================================
---- mt7620-p4rev-113050.orig/src/common/cmm_data_pci.c
-+++ mt7620-p4rev-113050/src/common/cmm_data_pci.c
+--- a/src/common/cmm_data_pci.c
++++ b/src/common/cmm_data_pci.c
 @@ -1164,6 +1164,14 @@ VOID	RTMPHandlePreTBTTInterrupt(
  	{
  		APUpdateAllBeaconFrame(pAd);
@@ -25,10 +23,8 @@ Index: mt7620-p4rev-113050/src/common/cmm_data_pci.c
  	}
  	else
  #endif /* CONFIG_AP_SUPPORT */
-Index: mt7620-p4rev-113050/src/include/os/rt_drv.h
-===================================================================
---- mt7620-p4rev-113050.orig/src/include/os/rt_drv.h
-+++ mt7620-p4rev-113050/src/include/os/rt_drv.h
+--- a/src/include/os/rt_drv.h
++++ b/src/include/os/rt_drv.h
 @@ -337,6 +337,7 @@ struct os_cookie {
  	RTMP_NET_TASK_STRUCT	hcca_dma_done_work;
  	
@@ -45,10 +41,8 @@ Index: mt7620-p4rev-113050/src/include/os/rt_drv.h
  #endif /* WORKQUEUE_BH */
  
  #ifdef RTMP_MAC_PCI
-Index: mt7620-p4rev-113050/src/include/os/rt_linux.h
-===================================================================
---- mt7620-p4rev-113050.orig/src/include/os/rt_linux.h
-+++ mt7620-p4rev-113050/src/include/os/rt_linux.h
+--- a/src/include/os/rt_linux.h
++++ b/src/include/os/rt_linux.h
 @@ -664,6 +664,7 @@ struct os_cookie {
  	struct work_struct   hcca_dma_done_work;
  	
@@ -65,10 +59,8 @@ Index: mt7620-p4rev-113050/src/include/os/rt_linux.h
  #endif /* WORKQUEUE_BH */
  
  #ifdef RTMP_MAC_PCI
-Index: mt7620-p4rev-113050/src/include/rtmp.h
-===================================================================
---- mt7620-p4rev-113050.orig/src/include/rtmp.h
-+++ mt7620-p4rev-113050/src/include/rtmp.h
+--- a/src/include/rtmp.h
++++ b/src/include/rtmp.h
 @@ -9631,8 +9631,10 @@ VOID RtmpMgmtTaskExit(
  
  #ifdef WORKQUEUE_BH
@@ -80,10 +72,8 @@ Index: mt7620-p4rev-113050/src/include/rtmp.h
  #endif /* WORKQUEUE_BH */
  
  
-Index: mt7620-p4rev-113050/src/os/linux/rt_profile.c
-===================================================================
---- mt7620-p4rev-113050.orig/src/os/linux/rt_profile.c
-+++ mt7620-p4rev-113050/src/os/linux/rt_profile.c
+--- a/src/os/linux/rt_profile.c
++++ b/src/os/linux/rt_profile.c
 @@ -515,6 +515,96 @@ void tbtt_tasklet(unsigned long data)
  #endif /* CONFIG_AP_SUPPORT */
  }
@@ -181,10 +171,8 @@ Index: mt7620-p4rev-113050/src/os/linux/rt_profile.c
  
  void announce_802_3_packet(
  	IN	VOID			*pAdSrc,
-Index: mt7620-p4rev-113050/src/os/linux/rt_rbus_pci_drv.c
-===================================================================
---- mt7620-p4rev-113050.orig/src/os/linux/rt_rbus_pci_drv.c
-+++ mt7620-p4rev-113050/src/os/linux/rt_rbus_pci_drv.c
+--- a/src/os/linux/rt_rbus_pci_drv.c
++++ b/src/os/linux/rt_rbus_pci_drv.c
 @@ -93,6 +93,7 @@ NDIS_STATUS RtmpNetTaskInit(IN RTMP_ADAP
  	RTMP_OS_TASKLET_INIT(pAd, &pObj->ac3_dma_done_work, ac3_dma_done_workq);
  	RTMP_OS_TASKLET_INIT(pAd, &pObj->hcca_dma_done_work, hcca_dma_done_workq);

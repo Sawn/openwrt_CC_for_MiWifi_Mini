@@ -1,8 +1,6 @@
-Index: mt7620-p4rev-113050/src/os/linux/rt_rbus_pci_drv.c
-===================================================================
---- mt7620-p4rev-113050.orig/src/os/linux/rt_rbus_pci_drv.c
-+++ mt7620-p4rev-113050/src/os/linux/rt_rbus_pci_drv.c
-@@ -773,6 +773,13 @@ static void ac0_dma_done_tasklet(unsigne
+--- a/src/os/linux/rt_rbus_pci_drv.c
++++ b/src/os/linux/rt_rbus_pci_drv.c
+@@ -776,6 +776,13 @@ static void ac0_dma_done_tasklet(unsigne
  }
  
  

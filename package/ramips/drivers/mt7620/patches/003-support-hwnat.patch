@@ -1,7 +1,5 @@
-Index: mt7620-p4rev-113050/build/Makefile
-===================================================================
---- mt7620-p4rev-113050.orig/build/Makefile
-+++ mt7620-p4rev-113050/build/Makefile
+--- a/build/Makefile
++++ b/build/Makefile
 @@ -251,7 +251,12 @@ EXTRA_CFLAGS += -DAGGREGATION_SUPPORT -D
  EXTRA_CFLAGS += -DCONFIG_AP_SUPPORT -DAP_SCAN_SUPPORT -DUAPSD_AP_SUPPORT -DUAPSD_SUPPORT -DRTMP_RBUS_SUPPORT -DRTMP_MAC_PCI
  EXTRA_CFLAGS += -DDOT11_N_SUPPORT -DSTATS_COUNT_SUPPORT -DIAPP_SUPPORT -DDOT1X_SUPPORT
