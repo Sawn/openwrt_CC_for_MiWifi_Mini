@@ -1,7 +1,5 @@
-Index: mt76x2e-p4rev-113843/src/common/rt_led.c
-===================================================================
 --- /dev/null
-+++ mt76x2e-p4rev-113843/src/common/rt_led.c
++++ b/src/common/rt_led.c
 @@ -0,0 +1,563 @@
 +/****************************************************************************
 + * Ralink Tech Inc.
@@ -566,10 +564,8 @@ Index: mt76x2e-p4rev-113843/src/common/rt_led.c
 +}
 +
 +#endif /* LED_CONTROL_SUPPORT */
-Index: mt76x2e-p4rev-113843/src/include/rt_led.h
-===================================================================
 --- /dev/null
-+++ mt76x2e-p4rev-113843/src/include/rt_led.h
++++ b/src/include/rt_led.h
 @@ -0,0 +1,195 @@
 +/****************************************************************************
 + * Ralink Tech Inc.
