@@ -33,6 +33,7 @@ define KernelPackage/mt7620
   TITLE:=MTK MT7620 wifi AP driver
   FILES:=$(PKG_BUILD_DIR)/build/mt7620.ko
   DEPENDS:=@TARGET_ramips_mt7620
+  CONFLICTS:=kmod-rt2800-pci kmod-rt2800-soc
   AUTOLOAD:=$(call AutoLoad,90,mt7620)
   SUBMENU:=Drivers
   MENU:=1
