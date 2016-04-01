@@ -46,7 +46,8 @@ define KernelPackage/mt76x2e
   CATEGORY:=MTK Properties
   TITLE:=MTK MT76x2e wifi AP driver
   FILES:=$(PKG_BUILD_DIR)/build/mt76x2e.ko
-  DEPENDS:=+kmod-cfg80211
+  DEPENDS:=+kmod-cfg80211 +uci2dat
+  CONFLICTS:=kmod-mt76 kmod-mac80211
   AUTOLOAD:=$(call AutoLoad,91,mt76x2e)
   SUBMENU:=Drivers
   MENU:=1
@@ -97,6 +98,7 @@ define KernelPackage/mt76x2e/install
 		$(INSTALL_BIN) ./files/SingleSKU.dat $(1)/etc/wireless/mt7612/SingleSKU.dat ; \
 		echo p$(P4REV) > $(1)/etc/wireless/mt7612e/version; \
 	fi
+	$(INSTALL_BIN) ./files/ralink_common.sh $(1)/lib/wifi/ralink_common.sh
 endef
 
 $(eval $(call KernelPackage,mt76x2e))
